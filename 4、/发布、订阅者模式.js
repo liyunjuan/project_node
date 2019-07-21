@@ -1,7 +1,10 @@
-// 订阅
-emmitter.on('event1',function(message){
+var events = require('events');
+var emitter = new events.EventEmitter();
+
+// 订阅，观察者
+emitter.on('event1',function(message){
     console.log(message);
 });
 
 // 发布
-emmitter.emit('event1','I am message');
+emitter.emit('event1','I am message');
